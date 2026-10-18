@@ -1,0 +1,74 @@
+<mxfile host="app.diagrams.net" modified="2026-10-18T00:00:00.000Z" agent="llm-chat" version="24.7.17">
+  <diagram id="llm-chat-drawio-architecture" name="Architecture">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pad" value="" style="fillColor=#ffffff;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="30" width="1500" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="config" value="DrawioConfiguration&#10;(formats, scale)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="workspace" value="Workspace&#10;(read/write access)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="50" y="330" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tool" value="ExportDrawioTool" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="50" y="190" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="parse" value="extractGraphModel&#10;(pako inflate)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="300" y="195" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="model" value="&lt;mxGraphModel&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="520" y="195" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="render" value="renderDiagram&#10;(maxGraph on jsdom)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="710" y="195" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="decide" value="format?" style="shape=rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="940" y="180" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="svg" value=".svg" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="120" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="resvg" value="@resvg/resvg-js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="260" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="png" value=".png" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="260" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e_config_tool" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="config" target="tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_workspace_tool" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontColor=#000000;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="workspace" target="tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_tool_parse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="tool" target="parse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_parse_model" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="parse" target="model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_model_render" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="model" target="render">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_render_decide" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="render" target="decide">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_decide_svg" value="svg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontColor=#000000;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="decide" target="svg">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" x="0" y="-12" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_decide_resvg" value="png" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="decide" target="resvg">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" x="0" y="12" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_resvg_png" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontColor=#000000;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="resvg" target="png">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
