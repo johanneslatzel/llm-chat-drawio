@@ -68,7 +68,7 @@
         ]
     },
     "dependencies": {
-        "@johannes.latzel/llm-chat": "^0.8.0",
+        "@johannes.latzel/llm-chat": "^0.10.0",
         "@johannes.latzel/llm-chat-workspace": "^0.2.0",
         "@maxgraph/core": "^0.25.0",
         "@resvg/resvg-js": "^2.6.2",
