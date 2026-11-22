@@ -1,6 +1,6 @@
 {
     "name": "@johannes.latzel/llm-chat-drawio",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Headless draw.io diagram rendering tools for the llm-chat package",
     "license": "MIT",
     "sideEffects": false,
@@ -68,8 +68,8 @@
         ]
     },
     "dependencies": {
-        "@johannes.latzel/llm-chat": "^0.8.0",
-        "@johannes.latzel/llm-chat-workspace": "^0.2.0",
+        "@johannes.latzel/llm-chat-tool": "^0.1.0",
+        "@johannes.latzel/llm-chat-workspace": "^0.3.0",
         "@maxgraph/core": "^0.25.0",
         "@resvg/resvg-js": "^2.6.2",
         "global-jsdom": "^30.0.0",

@@ -1,4 +1,4 @@
-import { ToolPackage } from '@johannes.latzel/llm-chat';
+import { ToolPackage } from '@johannes.latzel/llm-chat-tool';
 import type { Workspace } from '@johannes.latzel/llm-chat-workspace';
 import { DrawioConfiguration } from '../lib/config.js';
 import { ExportDrawioTool } from '../tools/export-drawio.js';
